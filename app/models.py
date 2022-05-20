@@ -6,3 +6,6 @@ class Book(models.Model):
     author_name = models.CharField(max_length=255, blank=True, null=True)
     year = models.IntegerField(blank=True, null=True)
     price = models.IntegerField()
+
+    def __str__(self):
+        return self.name
