@@ -9,24 +9,26 @@
 <h1>Books</h1>
 <img alt='book' src="https://www.ukrgate.com/eng/wp-content/uploads/2021/02/The-Ukrainian-Book-Institute-Purchases-380.9-Thousand-Books-for-Public-Libraries1.jpeg" width="500">
 <table class="table table-striped table-hover">
-  <thead>
+    <thead>
     <tr>
-      <th scope="col">id</th>
-      <th scope="col">Name</th>
-      <th scope="col">Author</th>
-      <th scope="col">Price</th>
+        <th scope="col">id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Author</th>
+        <th scope="col">Price</th>
+        <th scope="col">Year</th>
     </tr>
-  </thead>
-  <tbody>
-  {% for book in context.books %}
-    <tr>
-      <th scope="row">{{ book.id }}</th>
-      <td>{{ book.name }}</td>
-      <td>{{ book.author_name }}</td>
-      <td>{{ book.price }}</td>
-    </tr>
-  {% endfor %}
-  </tbody>
+    </thead>
+    <tbody>
+    {% for book in context.books %}
+        <tr>
+            <th scope="row">{{ book.id }}</th>
+            <td>{{ book.name }}</td>
+            <td>{{ book.author_name }}</td>
+            <td>{{ book.price }}</td>
+            <td>{{ book.year }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
 </table>
 </body>
 </html>
