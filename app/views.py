@@ -18,4 +18,7 @@ def all_books(request):
 
 def book_detail(request, book_id):
     book = get_object_or_404(models.Book, id=book_id)
-    return HttpResponse(book.name)
+    context = {
+        'book': book,
+    }
+    return render(request, 'book.html', {'context': context})
