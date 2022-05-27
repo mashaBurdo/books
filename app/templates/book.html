@@ -13,6 +13,11 @@
         </ul>
     </div>
 
+<form method="post">
+    {% csrf_token %}
+    {{ context.form }}
+    <input type="submit" value="Submit">
+</form>
     <table class="book-table table table-striped table-hover">
         <thead>
         <tr>
