@@ -1,11 +1,11 @@
-.all-books-title {
+.all-items-title {
     color: blue;
     text-align: center;
     margin: 40px;
     background-color: pink;
     border: 4px dashed crimson;
 }
-.img-container {
+.img-container{
     display: flex;
     justify-content: center;
 }
@@ -17,4 +17,8 @@ body {
 }
 .book-table {
     margin-top: 40px;
+}
+.center-card {
+    margin-top: 50px;
+    left: 40%;
 }

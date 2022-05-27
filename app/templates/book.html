@@ -4,11 +4,12 @@
 {% block title %}{{ context.book.name }}{% endblock %}
 
 {% block content %}
-<div class="card" style="width: 18rem;">
-    <ul class="list-group list-group-flush">
+<div class="card center-card" style="width: 18rem;">
+    <ul class="list-group list-group-flush center-card">
         <li class="list-group-item">Name: {{ context.book.name }}</li>
         <li class="list-group-item">Year: {{ context.book.year }}</li>
         <li class="list-group-item">Author: {{ context.book.author_name}}</li>
+        <li class="list-group-item">Price: {{ context.book.price}}</li>
     </ul>
 </div>
 {% endblock %}

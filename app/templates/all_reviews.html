@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+{% block title %}All reviews{% endblock %}
+
+{% block content %}
+<h1 class="all-items-title">All reviews</h1>
+<div class="img-container">
+    <img alt='book' src="https://www.ukrgate.com/eng/wp-content/uploads/2021/02/The-Ukrainian-Book-Institute-Purchases-380.9-Thousand-Books-for-Public-Libraries1.jpeg" width="500">
+</div>
+    <table class="book-table table table-striped table-hover">
+    <thead>
+    <tr>
+        <th scope="col">id</th>
+        <th scope="col">Text</th>
+        <th scope="col">Book</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for review in context.reviews %}
+        <tr>
+            <th scope="row">{{ review.id }}</th>
+            <td>{{ review.text }}</td>
+            <td><a target="_blank" href={% url 'book' book_id=review.book.id %}>{{ review.book.name }}</a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
