@@ -26,7 +26,9 @@ def all_reviews(request):
 
 def book_detail(request, book_id):
     book = get_object_or_404(models.Book, id=book_id)
+    reviews = models.Review.objects.filter(book=book_id)
     context = {
         'book': book,
+        'reviews': reviews,
     }
     return render(request, 'book.html', {'context': context})
