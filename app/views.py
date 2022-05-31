@@ -1,5 +1,5 @@
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.shortcuts import get_object_or_404
 from django.urls import reverse
 
@@ -34,7 +34,7 @@ def book_detail(request, book_id):
             text = form.cleaned_data['text']
             book = get_object_or_404(models.Book, id=book_id)
             models.Review.objects.create(text=text, book=book)
-            return reverse('all_books') # TODO: fix
+            return redirect(reverse('book', args=[book_id]))
     else:
         form = forms.ReviewForm()
         book = get_object_or_404(models.Book, id=book_id)
