@@ -3,8 +3,14 @@ from django.core.exceptions import PermissionDenied
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
+from rest_framework import viewsets
 
-from . import forms, models
+from . import forms, models, serializers
+
+
+class BookViewSet(viewsets.ModelViewSet):
+    queryset = models.Book.objects.all()
+    serializer_class = serializers.BookSerializer
 
 
 def index(request):
